@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { View, TextInput, Text, TouchableOpacity, StyleSheet, KeyboardAvoidingView } from 'react-native';
 
@@ -87,3 +88,5 @@ const styles = StyleSheet.create({
     height: 40,
   },
 });
+=======
+>>>>>>> b00f9cf103e6bfe4832570fd6a0a0e58465e475a

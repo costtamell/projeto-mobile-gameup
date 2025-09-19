@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, View } from 'react-native';
+=======
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import { View, TextInput, Text, TouchableOpacity, StyleSheet, KeyboardAvoidingView } from 'react-native';
+>>>>>>> 08616016ae96819028ed2593b73827e1cbbfe102
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -37,11 +43,19 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     backgroundColor: '#5D00CC', 
     justifyContent: 'space-between',
   },
   header: {
     backgroundColor: '#FFEB00',
+=======
+    backgroundColor: '#5D00CC', // roxo
+    justifyContent: 'space-between',
+  },
+  header: {
+    backgroundColor: '#FFEB00', // amarelo
+>>>>>>> 08616016ae96819028ed2593b73827e1cbbfe102
     paddingVertical: 10,
     paddingHorizontal: 20,
     alignItems: 'flex-start',
@@ -86,4 +100,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFEB00',
     height: 40,
   },
+<<<<<<< HEAD
 });
+=======
+});
+=======
+>>>>>>> b00f9cf103e6bfe4832570fd6a0a0e58465e475a
+>>>>>>> 08616016ae96819028ed2593b73827e1cbbfe102

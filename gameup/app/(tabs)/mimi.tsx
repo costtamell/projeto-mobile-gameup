@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   buttonText: {
-    color: '#000',
+    color: '#832727ff',
     fontWeight: 'bold',
   },
   footer: {

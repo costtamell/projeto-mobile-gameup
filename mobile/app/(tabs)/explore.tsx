@@ -37,11 +37,11 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5D00CC', // roxo
+    backgroundColor: '#5D00CC', 
     justifyContent: 'space-between',
   },
   header: {
-    backgroundColor: '#FFEB00', // amarelo
+    backgroundColor: '#FFEB00', 
     paddingVertical: 10,
     paddingHorizontal: 20,
     alignItems: 'flex-start',

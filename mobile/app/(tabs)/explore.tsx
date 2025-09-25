@@ -65,6 +65,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     backgroundColor: "#4B0082", 
   },
   header: {
@@ -77,6 +78,16 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     marginRight: 8,
+=======
+    backgroundColor: '#5D00CC', 
+    justifyContent: 'space-between',
+  },
+  header: {
+    backgroundColor: '#FFEB00', 
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignItems: 'flex-start',
+>>>>>>> 2249f7f381a8a317d60b2b9bea1039fbaf63790b
   },
   title: {
     fontSize: 20,

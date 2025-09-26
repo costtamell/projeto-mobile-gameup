@@ -1,25 +1,36 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert } from "react-native";
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 
-export default function LoginScreen(): React.JSX.Element {
+export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const router = useRouter();
 
   const handleLogin = () => {
-    // Validação básica (opcional)
+    console.log("BOTÃO CLICADO!"); // Para debug
+    
     if (!email || !senha) {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
     
-    // Navegação para explore
-    router.replace("/(tabs)/explore");
+    console.log("Tentando navegar para explore...");
+    
+    // TENTE ESTAS OPÇÕES (uma de cada vez):
+    
+    // Opção 1: 
+    router.push("/(tabs)/explore");
+    
+    // Opção 2 (se a 1 não funcionar):
+    // router.replace("/(tabs)/explore");
+    
+    // Opção 3 (se as anteriores não funcionarem):
+    // router.navigate("/explore");
   };
 
   return (
     <View style={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <Image
           source={{ uri: "https://img.icons8.com/ios-filled/50/000000/controller.png" }}
@@ -28,7 +39,6 @@ export default function LoginScreen(): React.JSX.Element {
         <Text style={styles.headerText}>GameUp</Text>
       </View>
 
-      {/* Formulário */}
       <View style={styles.form}>
         <Text style={styles.label}>Email</Text>
         <TextInput
@@ -51,18 +61,20 @@ export default function LoginScreen(): React.JSX.Element {
           onChangeText={setSenha}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <TouchableOpacity 
+          style={styles.button} 
+          onPress={handleLogin}
+          activeOpacity={0.7}
+        >
           <Text style={styles.buttonText}>Enter</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Rodapé */}
       <View style={styles.footer}></View>
     </View>
   );
 }
 
-// Seus styles permanecem os mesmos...
 const styles = StyleSheet.create({
   container: {
     flex: 1,

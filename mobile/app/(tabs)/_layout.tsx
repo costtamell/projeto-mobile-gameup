@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+=======
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert } from "react-native";
+import { Stack, useRouter } from "expo-router";
+>>>>>>> 414d5aa5544954db93993430b33334518fc4f7c3
 
 
 type RootStackParamList = {
@@ -19,6 +24,7 @@ export default function LoginScreen({ navigation }: Props): React.JSX.Element {
   const [senha, setSenha] = useState("");
 
   const handleLogin = () => {
+<<<<<<< HEAD
     navigation.navigate("Home"); 
   };
 
@@ -62,6 +68,68 @@ export default function LoginScreen({ navigation }: Props): React.JSX.Element {
       
       <View style={styles.footer}></View>
     </View>
+=======
+    console.log("✅ BOTÃO ENTER CLICADO!");
+    
+    if (!email || !senha) {
+      Alert.alert("Erro", "Por favor, preencha todos os campos");
+      return;
+    }
+    
+    console.log("🔄 Navegando para explore...");
+    
+    // **NAVEGAÇÃO CORRETA - use o caminho absoluto**
+    router.push("/(tabs)/explore");
+  };
+
+  return (
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Image
+            source={{ uri: "https://img.icons8.com/ios-filled/50/000000/controller.png" }}
+            style={styles.logo}
+          />
+          <Text style={styles.headerText}>GameUp</Text>
+        </View>
+
+        <View style={styles.form}>
+          <Text style={styles.label}>Email</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite seu email"
+            placeholderTextColor="#666"
+            value={email}
+            onChangeText={setEmail}
+            autoCapitalize="none"
+            keyboardType="email-address"
+          />
+
+          <Text style={styles.label}>Senha</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite sua senha"
+            placeholderTextColor="#666"
+            secureTextEntry
+            value={senha}
+            onChangeText={setSenha}
+          />
+
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={handleLogin}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.buttonText}>ENTRAR</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.footer}></View>
+      </View>
+    </>
+>>>>>>> 414d5aa5544954db93993430b33334518fc4f7c3
   );
 }
 
@@ -110,11 +178,11 @@ const styles = StyleSheet.create({
     marginTop: 30,
     backgroundColor: "#FFD700", 
     borderRadius: 8,
-    paddingVertical: 12,
+    paddingVertical: 15,
     alignItems: "center",
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
     color: "#000000", 
   },

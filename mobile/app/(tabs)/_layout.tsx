@@ -1,80 +1,77 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { useRouter } from "expo-router"; // Usando o hook do Expo Router
 
-export default function LoginScreen() {
+export default function PaginaLayout() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const router = useRouter();
+  const router = useRouter(); // Usando o hook para navegação
 
+  // Função para lidar com o clique no botão
   const handleLogin = () => {
     console.log("✅ BOTÃO ENTER CLICADO!");
-    
+
     if (!email || !senha) {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
-    
-    console.log("🔄 Navegando para explore...");
-    
-    // **NAVEGAÇÃO CORRETA - use o caminho absoluto**
-    router.push("/(tabs)/explore");
+
+    console.log("🔄 Navegando para Explore...");
+   
+    // Navega até a página explore.tsx, que está na pasta (tabs)
+    router.push("/(tabs)/explore"); // Caminho absoluto para a página explore
   };
 
   return (
-    <>
-      <Stack.Screen options={{ headerShown: false }} />
-      
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Image
-            source={{ uri: "https://img.icons8.com/ios-filled/50/000000/controller.png" }}
-            style={styles.logo}
-          />
-          <Text style={styles.headerText}>GameUp</Text>
-        </View>
-
-        <View style={styles.form}>
-          <Text style={styles.label}>Email</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Digite seu email"
-            placeholderTextColor="#666"
-            value={email}
-            onChangeText={setEmail}
-            autoCapitalize="none"
-            keyboardType="email-address"
-          />
-
-          <Text style={styles.label}>Senha</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Digite sua senha"
-            placeholderTextColor="#666"
-            secureTextEntry
-            value={senha}
-            onChangeText={setSenha}
-          />
-
-          <TouchableOpacity 
-            style={styles.button} 
-            onPress={handleLogin}
-            activeOpacity={0.7}
-          >
-            <Text style={styles.buttonText}>ENTRAR</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.footer}></View>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Image
+          source={{ uri: "https://img.icons8.com/ios-filled/50/000000/controller.png" }}
+          style={styles.logo}
+        />
+        <Text style={styles.headerText}>GameUp</Text>
       </View>
-    </>
+
+      <View style={styles.form}>
+        <Text style={styles.label}>Email</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite seu email"
+          placeholderTextColor="#666"
+          value={email}
+          onChangeText={setEmail}
+          autoCapitalize="none"
+          keyboardType="email-address"
+        />
+
+        <Text style={styles.label}>Senha</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite sua senha"
+          placeholderTextColor="#666"
+          secureTextEntry
+          value={senha}
+          onChangeText={setSenha}
+        />
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleLogin}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.buttonText}>ENTRAR</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.footer}></View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#4C00FF",
+    backgroundColor: '#5D00CC',
   },
   header: {
     flexDirection: "row",

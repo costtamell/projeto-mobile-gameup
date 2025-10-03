@@ -1,14 +1,63 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+=======
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert } from "react-native";
-import { useRouter } from "expo-router"; // Usando o hook do Expo Router
+import { Stack, useRouter } from "expo-router";
 
-export default function PaginaLayout() {
+export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const router = useRouter(); // Usando o hook para navegação
+  const router = useRouter();
 
   // Função para lidar com o clique no botão
   const handleLogin = () => {
+<<<<<<< HEAD
+    navigation.navigate("Home"); 
+  };
+
+  return (
+    <View style={styles.container}>
+      
+      <View style={styles.header}>
+        <Image
+          source={{ uri: "https://img.icons8.com/ios-filled/50/000000/controller.png" }}
+          style={styles.logo}
+        />
+        <Text style={styles.headerText}>GameUp</Text>
+      </View>
+
+      
+      <View style={styles.form}>
+        <Text style={styles.label}>Email</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite seu email"
+          placeholderTextColor="#333"
+          value={email}
+          onChangeText={setEmail}
+        />
+
+        <Text style={styles.label}>Senha</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite sua senha"
+          placeholderTextColor="#333"
+          secureTextEntry
+          value={senha}
+          onChangeText={setSenha}
+        />
+
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <Text style={styles.buttonText}>Enter</Text>
+        </TouchableOpacity>
+      </View>
+
+      
+      <View style={styles.footer}></View>
+    </View>
+=======
     console.log("✅ BOTÃO ENTER CLICADO!");
 
     if (!email || !senha) {
@@ -63,20 +112,21 @@ export default function PaginaLayout() {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.footer}></View>
-    </View>
+        <View style={styles.footer}></View>
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5D00CC',
+    backgroundColor: "#4C00FF",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#FFD700",
+    backgroundColor: "#FFD700", 
     paddingHorizontal: 16,
     paddingVertical: 10,
   },
@@ -97,12 +147,12 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: "#FFFFFF",
+    color: "#FFFFFF", 
     marginBottom: 6,
     marginTop: 15,
   },
   input: {
-    backgroundColor: "#FFD700",
+    backgroundColor: "#FFD700", 
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 10,
@@ -111,7 +161,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 30,
-    backgroundColor: "#FFD700",
+    backgroundColor: "#FFD700", 
     borderRadius: 8,
     paddingVertical: 15,
     alignItems: "center",
@@ -119,10 +169,10 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#000000",
+    color: "#000000", 
   },
   footer: {
     height: 40,
-    backgroundColor: "#FFD700",
+    backgroundColor: "#FFD700", 
   },
 });

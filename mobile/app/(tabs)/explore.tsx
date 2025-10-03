@@ -1,7 +1,10 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ExploreScreen() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -37,7 +40,7 @@ export default function ExploreScreen() {
       </ScrollView>
 
       <View style={styles.footer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
             source={{ uri: "https://cdn-icons-png.flaticon.com/512/25/25694.png" }}
             style={styles.homeIcon}
@@ -93,4 +96,3 @@ const styles = StyleSheet.create({
     height: 30,
   },
 });
-

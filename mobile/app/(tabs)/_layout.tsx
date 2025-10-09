@@ -6,17 +6,18 @@ import {
   TouchableOpacity, 
   StyleSheet, 
   KeyboardAvoidingView,
-  Platform,
-  Image
+  Platform
 } from 'react-native';
+import { useRouter } from 'expo-router';
 
-const Layout = ({ navigation }: any) => {
+const Layout = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleLogin = () => {
-    // Navega para a tela Explore
-    navigation.navigate('Explore');
+    // Navega para a tela explore usando Expo Router
+    router.push('/explore');
   };
 
   return (
@@ -24,12 +25,10 @@ const Layout = ({ navigation }: any) => {
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      {/* Header com Logo */}
       <View style={styles.header}>
         <Text style={styles.title}>GameUp</Text>
       </View>
 
-      {/* Formulário de Login */}
       <View style={styles.formContainer}>
         <TextInput
           style={styles.input}
@@ -55,7 +54,6 @@ const Layout = ({ navigation }: any) => {
         </TouchableOpacity>
       </View>
 
-      {/* Footer */}
       <View style={styles.footer}>
         <Text style={styles.footerText}>Comece a jogar agora!</Text>
       </View>

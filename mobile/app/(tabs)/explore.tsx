@@ -44,15 +44,13 @@ const jogos = [
   },
 ];
 
-const Explore = ({ navigation }: any) => {
+const Explore = () => {
   return (
     <View style={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <Text style={styles.title}>Explore Jogos</Text>
       </View>
      
-      {/* Grid de Jogos */}
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
@@ -63,7 +61,6 @@ const Explore = ({ navigation }: any) => {
               <Image
                 source={{ uri: jogo.imagem }}
                 style={styles.gameImage}
-                onError={(e) => console.log('Erro ao carregar imagem:', e.nativeEvent.error)}
               />
               <Text style={styles.gameName}>{jogo.nome}</Text>
             </TouchableOpacity>
@@ -89,9 +86,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 5,
   },
   scrollContainer: {
     padding: 10,
@@ -109,14 +103,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
     borderRadius: 15,
     padding: 15,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   gameImage: {
     width: 100,

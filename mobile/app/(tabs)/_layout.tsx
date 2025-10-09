@@ -1,65 +1,73 @@
-import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  TextInput, 
-  TouchableOpacity, 
-  StyleSheet, 
-  KeyboardAvoidingView,
-  Platform,
-  Image
+import React from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Dimensions
 } from 'react-native';
 
-const Layout = ({ navigation }: any) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const { width } = Dimensions.get('window');
 
-  const handleLogin = () => {
-    // Navega para a tela Explore
-    navigation.navigate('Explore');
-  };
+const jogos = [
+  {
+    id: 1,
+    nome: 'Bubble Shooter',
+    imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrwqIIKAYLQ5PQgJixk8Jlf3mKrlCPh4ZiMOBiWp7Rhy0btVJH9FchGykEJj6dG4f1T17GzOCV3VvGF9dwDwN9gBIHmbg3RJnFK9-MQ5Q-_g',
+  },
+  {
+    id: 2,
+    nome: 'Temple Run 2',
+    imagem: 'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/b5c8b617f65be7cc4d56dd3657590ae7/temple-run-2.png',
+  },
+  {
+    id: 3,
+    nome: 'Fashion Style',
+    imagem: 'https://via.placeholder.com/120x120/4CAF50/white?text=Fashion',
+  },
+  {
+    id: 4,
+    nome: 'Puzzle Game',
+    imagem: 'https://via.placeholder.com/120x120/2196F3/white?text=Puzzle',
+  },
+  {
+    id: 5,
+    nome: 'Racing',
+    imagem: 'https://via.placeholder.com/120x120/FF9800/white?text=Racing',
+  },
+  {
+    id: 6,
+    nome: 'Adventure',
+    imagem: 'https://via.placeholder.com/120x120/9C27B0/white?text=Adventure',
+  },
+];
 
+const Explore = () => {
   return (
-    <KeyboardAvoidingView 
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    >
-      {/* Header com Logo */}
+    <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>GameUp</Text>
+        <Text style={styles.title}>Explore Jogos</Text>
       </View>
-
-      {/* Formulário de Login */}
-      <View style={styles.formContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          placeholderTextColor="#666"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-          autoCapitalize="none"
-        />
-        
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          placeholderTextColor="#666"
-          secureTextEntry
-          value={password}
-          onChangeText={setPassword}
-        />
-        
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Enter</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Footer */}
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>Comece a jogar agora!</Text>
-      </View>
-    </KeyboardAvoidingView>
+     
+      <ScrollView
+        contentContainerStyle={styles.scrollContainer}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={styles.gameGrid}>
+          {jogos.map(jogo => (
+            <TouchableOpacity key={jogo.id} style={styles.gameCard}>
+              <Image
+                source={{ uri: jogo.imagem }}
+                style={styles.gameImage}
+              />
+              <Text style={styles.gameName}>{jogo.nome}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
@@ -69,74 +77,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#3f51b5',
   },
   header: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    paddingBottom: 50,
+    paddingTop: 60,
+    paddingBottom: 20,
+    backgroundColor: '#3f51b5',
   },
   title: {
-    fontSize: 48,
+    fontSize: 32,
     color: '#fff',
-    fontWeight: 'bold',
-    textShadowColor: 'rgba(0, 0, 0, 0.3)',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 5,
-  },
-  formContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 40,
-  },
-  input: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#fff',
-    borderRadius: 25,
-    paddingHorizontal: 20,
-    marginBottom: 20,
-    fontSize: 16,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 3,
-  },
-  button: {
-    backgroundColor: '#ffeb3b',
-    paddingVertical: 15,
-    paddingHorizontal: 60,
-    borderRadius: 25,
-    marginTop: 20,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  buttonText: {
-    fontSize: 20,
-    color: '#3f51b5',
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  footer: {
-    flex: 0.5,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingBottom: 30,
+  scrollContainer: {
+    padding: 10,
   },
-  footerText: {
+  gameGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+  },
+  gameCard: {
+    width: (width - 60) / 2,
+    alignItems: 'center',
+    marginBottom: 25,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: 15,
+    padding: 15,
+  },
+  gameImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 15,
+    marginBottom: 10,
+  },
+  gameName: {
     color: '#fff',
-    fontSize: 16,
-    opacity: 0.8,
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center',
   },
 });
 
-export default Layout;
+export default Explore;

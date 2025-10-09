@@ -6,18 +6,18 @@ import {
   TouchableOpacity, 
   StyleSheet, 
   KeyboardAvoidingView,
-  Platform,
-  Image
+  Platform
 } from 'react-native';
 import { useRouter } from 'expo-router';
 
-const Layout = ({ navigation }: any) => {
+const Layout = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleLogin = () => {
-    // Navega para a tela Explore
-    navigation.navigate('Explore');
+    // Navega para a tela explore usando Expo Router
+    router.push('/explore');
   };
 
   return (
@@ -25,12 +25,10 @@ const Layout = ({ navigation }: any) => {
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      {/* Header com Logo */}
       <View style={styles.header}>
-        <Text style={styles.title}>Explore Jogos</Text>
+        <Text style={styles.title}>GameUp</Text>
       </View>
 
-      {/* Formulário de Login */}
       <View style={styles.formContainer}>
         <TextInput
           style={styles.input}
@@ -56,7 +54,6 @@ const Layout = ({ navigation }: any) => {
         </TouchableOpacity>
       </View>
 
-      {/* Footer */}
       <View style={styles.footer}>
         <Text style={styles.footerText}>Comece a jogar agora!</Text>
       </View>
@@ -70,45 +67,74 @@ const styles = StyleSheet.create({
     backgroundColor: '#3f51b5',
   },
   header: {
-    paddingTop: 60,
-    paddingBottom: 20,
-    backgroundColor: '#3f51b5',
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingBottom: 50,
   },
   title: {
-    fontSize: 32,
+    fontSize: 48,
     color: '#fff',
+    fontWeight: 'bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 5,
+  },
+  formContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 40,
+  },
+  input: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#fff',
+    borderRadius: 25,
+    paddingHorizontal: 20,
+    marginBottom: 20,
+    fontSize: 16,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+  button: {
+    backgroundColor: '#ffeb3b',
+    paddingVertical: 15,
+    paddingHorizontal: 60,
+    borderRadius: 25,
+    marginTop: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  buttonText: {
+    fontSize: 20,
+    color: '#3f51b5',
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  scrollContainer: {
-    padding: 10,
-  },
-  gameGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    paddingHorizontal: 10,
-  },
-  gameCard: {
-    width: (width - 60) / 2,
+  footer: {
+    flex: 0.5,
+    justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 25,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    borderRadius: 15,
-    padding: 15,
+    paddingBottom: 30,
   },
-  gameImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 15,
-    marginBottom: 10,
-  },
-  gameName: {
+  footerText: {
     color: '#fff',
-    fontSize: 14,
-    fontWeight: '600',
-    textAlign: 'center',
+    fontSize: 16,
+    opacity: 0.8,
   },
 });
 
-export default Explore;
+export default Layout;

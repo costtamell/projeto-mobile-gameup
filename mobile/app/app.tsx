@@ -6,15 +6,30 @@ import Explore from './(tabs)/explore';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Layout">
-        <Stack.Screen name="Layout" component={Layout} />
-        <Stack.Screen name="Explore" component={Explore} />
+        <Stack.Screen 
+          name="Layout" 
+          component={Layout} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="Explore" 
+          component={Explore} 
+          options={{ 
+            title: 'Explorar',
+            headerStyle: {
+              backgroundColor: '#3f51b5',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
-
-export default App;
+}

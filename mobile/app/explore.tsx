@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 export default function Explore() {
   return (
     <View style={styles.container}>
-      {/* Cabeçalho */}
+      
       <View style={styles.header}>
         <Image
           source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8490/8490741.png' }}
@@ -14,7 +14,7 @@ export default function Explore() {
         <Text style={styles.title}>GameUp</Text>
       </View>
 
-      {/* Jogos */}
+      
       <ScrollView contentContainerStyle={styles.gamesContainer}>
         {[
           , 
@@ -30,7 +30,7 @@ export default function Explore() {
         ))}
       </ScrollView>
 
-      {/* Rodapé */}
+      
       <View style={styles.footer}>
         <TouchableOpacity onPress={() => router.replace('/')}>
           <Image

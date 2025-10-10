@@ -8,16 +8,16 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      {/* Header */}
+      
       <View style={styles.header}>
         <Image
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8490/8490741.png' }} // ícone de controle
+          source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8490/8490741.png' }} 
           style={styles.logo}
         />
         <Text style={styles.title}>GameUp</Text>
       </View>
 
-      {/* Campos */}
+      
       <View style={styles.form}>
         <TextInput
           style={styles.input}
@@ -44,7 +44,7 @@ export default function Index() {
         </TouchableOpacity>
       </View>
 
-      {/* Rodapé */}
+      
       <View style={styles.footer}></View>
     </View>
   );

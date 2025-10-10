@@ -11,7 +11,7 @@ export default function Index() {
       {/* Header */}
       <View style={styles.header}>
         <Image
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/685/685655.png' }} // ícone de controle
+          source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8490/8490741.png' }} // ícone de controle
           style={styles.logo}
         />
         <Text style={styles.title}>GameUp</Text>

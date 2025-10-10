@@ -8,7 +8,7 @@ export default function Explore() {
       {/* Cabeçalho */}
       <View style={styles.header}>
         <Image
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/685/685655.png' }}
+          source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8490/8490741.png' }}
           style={styles.logo}
         />
         <Text style={styles.title}>GameUp</Text>

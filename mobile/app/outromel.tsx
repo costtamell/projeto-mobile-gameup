@@ -1,9 +1,15 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, Linking } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router"; 
+import { router } from "expo-router";
 
 export default function Outromel() {
+  
+  const handlePlay = () => {
+    const url = "https://play.google.com/store/apps/details?id=com.gfg.topmodel&pcampaignid=web_share";
+    Linking.openURL(url).catch((err) => console.error("Erro ao abrir o link:", err));
+  };
+
   return (
     <View style={styles.container}>
       
@@ -23,10 +29,9 @@ export default function Outromel() {
       
       <Text style={styles.gameTitle}>Vestir Model - Salão de Moda</Text>
       <Text style={styles.description}>
-        é um aplicativo de vestir para Android onde os jogadores podem criar
-        diferentes looks para bonecas e supermodelos virtuais, usando uma
-        variedade de roupas, penteados e acessórios. O objetivo é treinar o
-        senso de moda, criar estilos com glamour ou fantasia, e partilhar as
+        É um aplicativo de vestir para Android onde os jogadores podem criar diferentes looks
+        para bonecas e supermodelos virtuais, usando uma variedade de roupas, penteados e acessórios.
+        O objetivo é treinar o senso de moda, criar estilos com glamour ou fantasia, e partilhar as
         criações com amigos.
       </Text>
 
@@ -40,7 +45,7 @@ export default function Outromel() {
       </View>
 
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handlePlay}>
         <Text style={styles.buttonText}>Jogar</Text>
       </TouchableOpacity>
 

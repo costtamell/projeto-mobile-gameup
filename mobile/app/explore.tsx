@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 export default function Explore() {
   return (
     <View style={styles.container}>
-      {/* Cabeçalho */}
+     
       <View style={styles.header}>
         <Image
           source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8490/8490741.png' }}
@@ -14,46 +14,46 @@ export default function Explore() {
         <Text style={styles.title}>GameUp</Text>
       </View>
 
-      {/* Área de Jogos */}
+      
       <ScrollView contentContainerStyle={styles.gamesContainer}>
-        {/* 1️⃣ Leva para index.tsx */}
-        <TouchableOpacity style={styles.card} onPress={() => router.push({ pathname: '/outromel' })}>
+        
+        <TouchableOpacity style={styles.card} onPress={() => router.push('/outromel')}>
           <Image
             source={{ uri: 'https://play-lh.googleusercontent.com/-5c4MsyKhGqLwJE3gRa3rVaD_f7CaGRTX_UewxDdIhKFQVhGa_4cH1fJqJSl__bDBw' }}
             style={styles.image}
           />
         </TouchableOpacity>
 
-        {/* 2️⃣ Leva para mimi.tsx */}
-        <TouchableOpacity style={styles.card} onPress={() => router.push({ pathname: '/mimi' })}>
+        
+        <TouchableOpacity style={styles.card} onPress={() => router.push('/mimi')}>
           <Image
             source={{ uri: 'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/b5c8b617f65be7cc4d56dd3657590ae7/temple-run-2.png' }}
             style={styles.image}
           />
         </TouchableOpacity>
 
-        {/* 3️⃣ Leva para mel.tsx */}
-        <TouchableOpacity style={styles.card} onPress={() => router.push({ pathname: '/mel' })}>
+        
+        <TouchableOpacity style={styles.card} onPress={() => router.push('/mel')}>
           <Image
-            source={{ uri: 'https://tcf.admeen.org/category/3000/2944/400x400/fire-and-water.jpg' }}
+            source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT85UnlldTqUNrDM1khUkD3TfYdH9vrwhf7rd9Qh2gOMT5V0vz86jARNszoJM9gSUNhrmMwlvkRBQxU6TEJvUxyIuQtETAVBK-kltusFCZc' }}
             style={styles.image}
           />
         </TouchableOpacity>
 
-        {/* 4️⃣ e 5️⃣ — continuam só visuais */}
-        <TouchableOpacity style={styles.card} onPress={() => router.push('/outromimi' as any)}>
+        
+        <TouchableOpacity style={styles.card} onPress={() => router.push('/outromimi')}>
           <Image
             source={{
-              uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVWxFerIHIlN9hxKbCKi07SyRe-o2nAzTmI0ghTujHG0x8vDhresBMuBq64-XF9q5kguZgUFyLC3u3dmLkBdAwH18Go-EPfINdLS0Vbku-wg',
+              uri: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRSdYtGjsTezm3dvQEf5nLt_MvTJb9tzQF1PMTQ1sdBg-slGMcv3rFYdhpDwBWwCQY6oHoB9Ux5ULO4J-OFuvGYHcXTGv1LFIESLVilqCEd',
             }}
             style={styles.image}
           />
         </TouchableOpacity>
       </ScrollView>
 
-      {/* Rodapé */}
+      
       <View style={styles.footer}>
-        <TouchableOpacity onPress={() => router.replace({ pathname: '/' })}>
+        <TouchableOpacity onPress={() => router.replace('/')}>
           <Image
             source={{ uri: 'https://cdn-icons-png.flaticon.com/512/25/25694.png' }}
             style={styles.homeIcon}

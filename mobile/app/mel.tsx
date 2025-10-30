@@ -1,29 +1,32 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, Linking } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router"; 
+import { router } from "expo-router";
 
 export default function Outromel() {
+  const handlePlay = () => {
+    const url = "https://play.google.com/store/apps/details?id=net.mobigame.zombietsunami&pcampaignid=web_share";
+    Linking.openURL(url).catch((err) => console.error("Erro ao abrir o link:", err));
+  };
+
   return (
     <View style={styles.container}>
-      
       <View style={styles.header}>
         <Ionicons name="game-controller" size={24} color="#6a0dad" />
         <Text style={styles.title}>GameUp</Text>
       </View>
 
-      
       <Image
         source={{
-          uri: "https://tcf.admeen.org/category/3000/2944/400x400/fire-and-water.jpg",
+          uri: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT85UnlldTqUNrDM1khUkD3TfYdH9vrwhf7rd9Qh2gOMT5V0vz86jARNszoJM9gSUNhrmMwlvkRBQxU6TEJvUxyIuQtETAVBK-kltusFCZc",
         }}
         style={styles.image}
       />
 
       
-      <Text style={styles.gameTitle}>Fireboy & Watergirl</Text>
+      <Text style={styles.gameTitle}>Zumbie Tsunami</Text>
       <Text style={styles.description}>
-      Fireboy and Watergirl é um jogo cooperativo de quebra-cabeça e plataforma. Fireboy pode ser movido usando as setas do teclado e Watergirl pode ser movido usando as teclas WASD. Fireboy só pode passar pela lava, enquanto Watergirl só pode passar pela água. Se Fireboy ou Watergirl tocarem no elemento oposto, eles morrerão e o nível terá que ser reiniciado. O ácido verde pode matar ambos os personagens. Diamantes vermelhos e azuis podem ser coletados pelos jogadores, e mecanismos como alavancas e botões terão que ser operados com cuidado para que ambos os personagens completem o nível. Assim que um nível for concluído, um gráfico mostrando quantos diamantes foram coletados ao longo do nível será revelado ao(s) jogador(es), bem como sua classificação.
+      Transforme os pedestres em zumbis e crie a maior horda. Devore seus amigos e desafie eles a uma corrida louca destruindo tudo no seu caminho. O Zombie Tsunami orgulhosamente ultrapassou os 200 milhões de jogadores em todo o mundo. - Otimizado para todos os modelos Android.
       </Text>
 
       
@@ -36,7 +39,7 @@ export default function Outromel() {
       </View>
 
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handlePlay}>
         <Text style={styles.buttonText}>Jogar</Text>
       </TouchableOpacity>
 

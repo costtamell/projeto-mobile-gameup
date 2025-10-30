@@ -1,9 +1,15 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, Linking } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router"; 
+import { router } from "expo-router";
 
 export default function Outromel() {
+  
+  const handlePlay = () => {
+    const url = "https://play.google.com/store/apps/details?id=com.imangi.templerun2&pcampaignid=web_share";
+    Linking.openURL(url).catch((err) => console.error("Erro ao abrir o link:", err));
+  };
+
   return (
     <View style={styles.container}>
       
@@ -23,7 +29,7 @@ export default function Outromel() {
       
       <Text style={styles.gameTitle}>Temple Run</Text>
       <Text style={styles.description}>
-      Temple Run é um jogo de corrida infinita onde o objetivo é roubar um ídolo amaldiçoado de um templo e fugir dos macacos que o perseguem, superando obstáculos como penhascos, árvores e ruínas. O jogador usa movimentos de deslizar, pular, inclinar e virar o celular para guiar o personagem. Para sobreviver o máximo possível, é preciso coletar moedas para comprar "power-ups" e outros personagens. 
+        Temple Run é um jogo de corrida infinita onde o objetivo é roubar um ídolo amaldiçoado de um templo e fugir dos macacos que o perseguem, superando obstáculos como penhascos, árvores e ruínas. O jogador usa movimentos de deslizar, pular, inclinar e virar o celular para guiar o personagem. Para sobreviver o máximo possível, é preciso coletar moedas para comprar "power-ups" e outros personagens.
       </Text>
 
       
@@ -36,7 +42,7 @@ export default function Outromel() {
       </View>
 
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handlePlay}>
         <Text style={styles.buttonText}>Jogar</Text>
       </TouchableOpacity>
 

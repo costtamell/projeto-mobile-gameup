@@ -101,9 +101,16 @@ O layout foi desenvolvido bem simples e pensando boa experiência do usuário, c
 * Tela Inicial: cartões dos jogos, com imagens atrativas.
 * Tela de Detalhes: informações bem organizadas e botão destacado para o usuário jogar.
 
+
 ---
 
 Observações Importantes
 
 Esse aplicativo **não utiliza nenhuma API externa** — os dados dos jogos (nome, imagem, descrição e avaliação) estão definidos diretamente no código (não conseguimos).
 * O foco principal é entender a estrutura de um app mobile em React Native, organização de telas e o fluxo de navegação.
+
+
+<img width="569" height="846" alt="página de login" src="https://github.com/user-attachments/assets/f83a201a-b161-4e5e-9cb6-026815d93920" />
+<img width="499" height="756" alt="página de jogos" src="https://github.com/user-attachments/assets/a3b5f669-9b2e-4fb4-a81c-db798e449333" />
+<img width="499" height="757" alt="descrição e avaliação" src="https://github.com/user-attachments/assets/eade45a4-bc71-475e-9506-bd5f7db377d6" />
+<img width="1454" height="906" alt="baixar" src="https://github.com/user-attachments/assets/fc9b13b9-d322-4f12-87bd-f8082d6d056d" />

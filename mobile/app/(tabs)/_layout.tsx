@@ -5,7 +5,6 @@ import { router } from 'expo-router';
 export default function Explore() {
   return (
     <View style={styles.container}>
-      {/* Cabeçalho */}
       <View style={styles.header}>
         <Image
           source={{ uri: 'https://cdn-icons-png.flaticon.com/512/685/685655.png' }}
@@ -14,7 +13,7 @@ export default function Explore() {
         <Text style={styles.title}>GameUp</Text>
       </View>
 
-      {/* Jogos */}
+      
       <ScrollView contentContainerStyle={styles.gamesContainer}>
         {[
           'https://play-lh.googleusercontent.com/8cFzQqj_8JtGej5uUJK6sSln3tUHgWrYfEHRsCft4QKYm7pFSYNgE0FJWvH0v-QAHUg=w240-h480-rw', // princesa
@@ -30,7 +29,7 @@ export default function Explore() {
         ))}
       </ScrollView>
 
-      {/* Rodapé */}
+      
       <View style={styles.footer}>
         <TouchableOpacity onPress={() => router.replace('/')}>
           <Image
